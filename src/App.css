@@ -1,38 +1,101 @@
-.App {
+:root{
+  --dark: #121212;
+  --main: #36C7D0;
+}
+
+html{
+  font-size: 16px;
+  background: var(--dark);
+}
+body{
+  background: var(--dark);
+}
+
+.text-main{
+  color: var(--main);
+}
+
+.weather-card{
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.bg-weather{
+  background:  linear-gradient(
+    rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)
+  ), url('./assets/images/background.jpg') #121212;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label{
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input{
+  background: transparent;
   color: white;
+  border:none;
+  border-bottom: 2px solid #36C7D0;
+  width: 100%;
+  margin: 2rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+input:-internal-autofill-selected{
+  background: transparent!important;
+  color: var(--main)!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-card-container{
+  height: 60vh;
+}
+
+.bg-dark{
+  background: #212325!important;
+}
+
+.btn-custom{
+  border: 2px solid var(--main);
+  color: var(--main);
+  transition: 500ms ease-in-out;
+}
+
+.btn-custom:hover{
+  background: var(--main);
+  color: var(--dark);
+}
+
+.weather-data{
+  padding: 2rem 1rem;
+  border-radius: 18px;
+  color: var(--main);
+}
+
+.weather-data p{
+  font-size: 1rem;
+}
+
+@media (min-width: 768px){
+  .wrapper{
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .weather-card{
+    margin-top: 0;
+    border-radius: 0 25px 25px 0;
+  }
+  .bg-weather{
+    background:  linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url('./assets/images/background.jpg') #121212;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 25px 0 0 25px;
+  }
+  .app-card-container{
+    height: 80vh;
   }
 }
